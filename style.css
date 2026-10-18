@@ -1,0 +1,756 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+
+    color: #77565e;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            #ffe0ec 0,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            #fbdce9 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            #fffaf6,
+            #fff0f5,
+            #fffaf8
+        );
+
+    overflow-x: hidden;
+}
+
+
+
+.header {
+    position: relative;
+    text-align: center;
+
+    padding: 35px 15px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c77e96,
+            #e7a7bc,
+            #d48ca8
+        );
+
+    color: #fffafc;
+
+    border-bottom: 5px solid #f5cfdb;
+
+    box-shadow:
+        0 5px 20px rgba(179, 105, 132, 0.18);
+
+    overflow: hidden;
+}
+
+.header::before,
+.header::after {
+    content: "✿";
+    position: absolute;
+
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 75px;
+}
+
+.header::before {
+    left: 5%;
+    top: 5px;
+    transform: rotate(-20deg);
+}
+
+.header::after {
+    right: 5%;
+    bottom: -10px;
+    transform: rotate(20deg);
+}
+
+.header h1 {
+    position: relative;
+    z-index: 1;
+
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 3px 10px rgba(120, 60, 80, 0.15);
+}
+
+.romaji {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 13px;
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #fff0f5;
+}
+
+.header-decoration {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+
+    font-size: 25px;
+    color: #ffe7f0;
+}
+
+.header-heart {
+    position: absolute;
+    right: 25%;
+    top: 10px;
+
+    font-size: 25px;
+    color: #ffe7f0;
+}
+
+
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+
+    margin: auto;
+    padding: 30px 22px;
+}
+
+
+
+.intro {
+    position: relative;
+
+    max-width: 900px;
+    margin: 5px auto 50px;
+
+    padding: 28px 30px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 2px solid #e9c5d1;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(177, 117, 139, 0.12);
+
+    animation: fadeIn 1s ease;
+}
+
+.intro p {
+    font-size: 15px;
+    line-height: 2.2;
+    text-align: center;
+}
+
+.intro-flower {
+    position: absolute;
+
+    top: -17px;
+    left: 20px;
+
+    font-size: 27px;
+}
+
+
+
+.tree-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+    margin-bottom: 35px;
+
+    color: #c77e96;
+}
+
+.tree-title h2 {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.tree-title span {
+    color: #e8a5bb;
+    font-size: 24px;
+}
+
+
+
+.family-tree {
+    position: relative;
+    padding: 10px 0 25px;
+}
+
+
+
+.parents {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 35px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.person-card {
+    position: relative;
+
+    width: 230px;
+    padding: 13px 13px 24px;
+
+    background: #fffefa;
+
+    border: 2px solid #e4c9b8;
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 18px rgba(130, 100, 83, 0.13);
+
+    text-align: center;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    animation: cardAppear 0.8s ease both;
+}
+
+.person-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #df9db6;
+
+    box-shadow:
+        0 12px 26px rgba(204, 133, 160, 0.25);
+}
+
+
+
+.photo {
+    width: 100%;
+    height: 145px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    border: 5px solid #fff;
+    border-radius: 14px;
+
+    box-shadow:
+        0 2px 9px rgba(140, 100, 110, 0.12);
+
+    overflow: hidden;
+}
+
+.photo span {
+    font-size: 65px;
+}
+
+.photo small {
+    font-size: 11px;
+    color: #916b78;
+}
+
+.father-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #f6e6e1,
+            #e7f0ed
+        );
+}
+
+.mother-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe1ec,
+            #f9e9f0
+        );
+}
+
+.brother-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #f8e4e9,
+            #e9e2f5
+        );
+}
+
+.indah-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #ffcfe0,
+            #ffe7ef
+        );
+}
+
+
+
+.person-card h3 {
+    margin-top: 13px;
+
+    color: #bd7b91;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.translation {
+    margin-top: 4px;
+
+    color: #a28c91;
+    font-size: 12px;
+}
+
+.name {
+    margin-top: 12px;
+
+    color: #c77e96;
+
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+.mini-divider {
+    margin: 10px 0;
+
+    color: #e6a6bb;
+    font-size: 19px;
+}
+
+.story {
+    color: #82676e;
+
+    font-size: 12px;
+    line-height: 2;
+
+    text-align: center;
+}
+
+.card-flower {
+    position: absolute;
+
+    right: 10px;
+    bottom: 6px;
+
+    font-size: 17px;
+}
+
+
+
+.parent-heart {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 50%;
+    top: 75px;
+
+    transform: translateX(-50%);
+
+    color: #df91ae;
+    font-size: 28px;
+
+    text-shadow:
+        0 2px 10px rgba(220, 130, 160, 0.25);
+}
+
+
+
+.tree-connector {
+    position: relative;
+
+    width: 100%;
+    height: 110px;
+
+    z-index: 1;
+}
+
+.vertical-line {
+    position: absolute;
+
+    left: 50%;
+    top: -1px;
+
+    width: 3px;
+    height: 48px;
+
+    background: #d4aa8d;
+
+    transform: translateX(-50%);
+}
+
+.horizontal-line {
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    top: 45px;
+
+    height: 3px;
+
+    background: #d4aa8d;
+}
+
+.bottom-line {
+    top: 45px;
+    height: 65px;
+}
+
+
+
+.children {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 16px;
+
+    align-items: start;
+
+    position: relative;
+    z-index: 2;
+}
+
+.child-card {
+    width: 100%;
+    min-width: 0;
+}
+
+
+
+.indah-card {
+    background:
+        linear-gradient(
+            180deg,
+            #fffafd,
+            #fff0f6
+        );
+
+    border-color: #e4a0ba;
+
+    box-shadow:
+        0 7px 22px rgba(220, 139, 169, 0.2);
+}
+
+.indah-card .photo {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd2e2,
+            #fce6f2
+        );
+}
+
+.indah-card h3,
+.indah-card .name {
+    color: #d37d9f;
+}
+
+
+
+.ending {
+    max-width: 750px;
+
+    margin: 70px auto 25px;
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 2px dashed #e6b4c6;
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(195, 127, 151, 0.1);
+}
+
+.ending-flower {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.ending h2 {
+    color: #c77e96;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+.ending p {
+    margin-top: 15px;
+
+    color: #82676e;
+
+    font-size: 14px;
+    line-height: 2.1;
+}
+
+.ending-heart {
+    margin-top: 15px;
+
+    color: #e39ab4;
+    font-size: 28px;
+}
+
+
+
+footer {
+    padding: 25px 15px;
+
+    text-align: center;
+
+    background: #f5dce5;
+
+    color: #a66f84;
+
+    font-size: 13px;
+    line-height: 2;
+
+    border-top: 1px solid #e9c3d1;
+}
+
+.footer-name {
+    margin-top: 5px;
+
+    color: #c77e96;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .children {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .child-card {
+        max-width: 280px;
+        justify-self: center;
+    }
+
+    .tree-connector {
+        height: 80px;
+    }
+
+    .bottom-line {
+        height: 35px;
+    }
+
+    .horizontal-line {
+        left: 10%;
+        right: 10%;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 30px 12px 25px;
+    }
+
+    .header h1 {
+        font-size: 29px;
+        letter-spacing: 3px;
+    }
+
+    .romaji {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        padding: 25px 14px;
+    }
+
+    .intro {
+        padding: 25px 18px;
+        margin-bottom: 35px;
+    }
+
+    .intro p {
+        font-size: 13px;
+        line-height: 2.1;
+    }
+
+    .tree-title {
+        gap: 10px;
+    }
+
+    .tree-title h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .parents {
+        gap: 15px;
+    }
+
+    .parent-card {
+        width: calc(50% - 8px);
+        padding: 9px 8px 22px;
+    }
+
+    .photo {
+        height: 110px;
+    }
+
+    .photo span {
+        font-size: 48px;
+    }
+
+    .person-card h3 {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 12px;
+    }
+
+    .story {
+        font-size: 11px;
+        line-height: 1.9;
+    }
+
+    .parent-heart {
+        top: 55px;
+        font-size: 21px;
+    }
+
+    .tree-connector {
+        height: 55px;
+    }
+
+    .horizontal-line {
+        top: 30px;
+        left: 8%;
+        right: 8%;
+    }
+
+    .vertical-line {
+        height: 32px;
+    }
+
+    .bottom-line {
+        top: 30px;
+        height: 25px;
+    }
+
+    .children {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 10px;
+    }
+
+    .child-card {
+        padding: 9px 8px 22px;
+    }
+
+    .ending {
+        margin-top: 45px;
+        padding: 28px 18px;
+    }
+
+    .ending h2 {
+        font-size: 21px;
+    }
+}
+
+
+
+@media (max-width: 360px) {
+
+    .parents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parent-card {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .parent-heart {
+        display: none;
+    }
+
+    .children {
+        grid-template-columns: 1fr;
+    }
+
+    .child-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
